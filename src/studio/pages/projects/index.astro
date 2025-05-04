@@ -1,0 +1,81 @@
+---
+import StudioLayout from "../../../studio/layouts/StudioLayout.astro";
+
+// In the future, we'd get real projects here
+const projects: any = [];
+---
+
+<StudioLayout title="Projects" activeItem="projects">
+  <div class="flex justify-between items-center mb-8">
+    <h1 class="text-3xl font-bold">Projects</h1>
+    <a href="/studio/projects/new" class="btn btn-primary">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-5 w-5 mr-2"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+      </svg>
+      New Project
+    </a>
+  </div>
+
+  {
+    projects.length === 0 ? (
+      <div class="card bg-base-200 shadow-xl">
+        <div class="card-body items-center text-center">
+          <h2 class="card-title">No Projects Yet</h2>
+          <p>
+            Start by creating your first project to showcase in your portfolio.
+          </p>
+          <div class="card-actions mt-4">
+            <a href="/studio/projects/new" class="btn btn-primary">
+              Create Project
+            </a>
+          </div>
+        </div>
+      </div>
+    ) : (
+      <div class="overflow-x-auto">
+        <table class="table w-full">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Date</th>
+              <th>Featured</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {projects.map((project: any) => (
+              <tr>
+                <td>{project.title}</td>
+                <td>{project.category}</td>
+                <td>{project.date}</td>
+                <td>{project.featured ? "Yes" : "No"}</td>
+                <td>
+                  <div class="flex gap-2">
+                    <a
+                      href={`/studio/projects/edit/${project.slug}`}
+                      class="btn btn-sm"
+                    >
+                      Edit
+                    </a>
+                    <button class="btn btn-sm btn-error">Delete</button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    )
+  }
+</StudioLayout>

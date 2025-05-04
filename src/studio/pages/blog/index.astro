@@ -1,0 +1,90 @@
+---
+import StudioLayout from "../../../studio/layouts/StudioLayout.astro";
+
+// In the future, we'd get real blog posts here
+const posts: any = [];
+---
+
+<StudioLayout title="Blog Posts" activeItem="blog">
+  <div class="flex justify-between items-center mb-8">
+    <h1 class="text-3xl font-bold">Blog Posts</h1>
+    <a href="/studio/blog/new" class="btn btn-primary">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-5 w-5 mr-2"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+      </svg>
+      New Post
+    </a>
+  </div>
+
+  <div class="flex mb-4">
+    <div class="join">
+      <button class="btn join-item btn-sm btn-active">All</button>
+      <button class="btn join-item btn-sm">Published</button>
+      <button class="btn join-item btn-sm">Drafts</button>
+    </div>
+  </div>
+
+  {
+    posts.length === 0 ? (
+      <div class="card bg-base-200 shadow-xl">
+        <div class="card-body items-center text-center">
+          <h2 class="card-title">No Blog Posts Yet</h2>
+          <p>
+            Start by creating your first blog post to share your thoughts and
+            ideas.
+          </p>
+          <div class="card-actions mt-4">
+            <a href="/studio/blog/new" class="btn btn-primary">
+              Create Blog Post
+            </a>
+          </div>
+        </div>
+      </div>
+    ) : (
+      <div class="overflow-x-auto">
+        <table class="table w-full">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {posts.map((post: any) => (
+              <tr>
+                <td>{post.title}</td>
+                <td>{post.category}</td>
+                <td>{post.date}</td>
+                <td>{post.draft ? "Draft" : "Published"}</td>
+                <td>
+                  <div class="flex gap-2">
+                    <a
+                      href={`/studio/blog/edit/${post.slug}`}
+                      class="btn btn-sm"
+                    >
+                      Edit
+                    </a>
+                    <button class="btn btn-sm btn-error">Delete</button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    )
+  }
+</StudioLayout>
