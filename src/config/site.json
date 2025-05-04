@@ -1,0 +1,11 @@
+{
+  "name": "Your Name",
+  "title": "Web Developer",
+  "description": "I build exceptional and accessible digital experiences for the web.",
+  "logo": "/images/logo.svg",
+  "url": "https://yourdomain.com",
+  "email": "contact@yourdomain.com",
+  "location": "City, Country",
+  "available": true,
+  "availableText": "Open to new opportunities"
+}

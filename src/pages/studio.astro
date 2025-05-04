@@ -1,0 +1,15 @@
+---
+import { isDev } from "../utils/environment";
+import StudioLayout from "../studio/layouts/StudioLayout.astro";
+import StudioApp from "../studio/components/StudioApp";
+
+// Only accessible in development mode
+if (!isDev()) {
+  return new Response("Not found", { status: 404 });
+}
+---
+
+<StudioLayout title="Portfolio Studio">
+  <h1 class="text-2xl font-bold mb-6">Dashboard</h1>
+  <StudioApp client:load />
+</StudioLayout>

@@ -1,0 +1,84 @@
+{
+  "categories": [
+    {
+      "name": "Frontend",
+      "skills": [
+        {
+          "name": "HTML/CSS",
+          "percentage": 95,
+          "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M13 17l5-5-5-5M6 17l5-5-5-5'/></svg>"
+        },
+        {
+          "name": "JavaScript",
+          "percentage": 90,
+          "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'></circle><circle cx='12' cy='12' r='4'></circle><line x1='4.93' y1='4.93' x2='9.17' y2='9.17'></line><line x1='14.83' y1='14.83' x2='19.07' y2='19.07'></line><line x1='14.83' y1='9.17' x2='19.07' y2='4.93'></line><line x1='14.83' y1='9.17' x2='18.36' y2='5.64'></line><line x1='4.93' y1='19.07' x2='9.17' y2='14.83'></line></svg>"
+        },
+        {
+          "name": "React",
+          "percentage": 85,
+          "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'></circle><circle cx='12' cy='12' r='3'></circle></svg>"
+        },
+        {
+          "name": "Tailwind CSS",
+          "percentage": 88,
+          "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2L2 7l10 5 10-5-10-5z'/><path d='M2 17l10 5 10-5'/><path d='M2 12l10 5 10-5'/></svg>"
+        },
+        {
+          "name": "Astro",
+          "percentage": 75,
+          "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'/></svg>"
+        }
+      ]
+    },
+    {
+      "name": "Backend",
+      "skills": [
+        {
+          "name": "Node.js",
+          "percentage": 80,
+          "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2L2 7v10l10 5 10-5V7l-10-5z' /><path d='M12 22v-5' /><path d='M12 12v-5' /><path d='M2 12h20' /></svg>"
+        },
+        {
+          "name": "Express",
+          "percentage": 75,
+          "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z'/><path d='M3.27 6.96L12 12.01l8.73-5.05'/></svg>"
+        },
+        {
+          "name": "MongoDB",
+          "percentage": 72,
+          "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z'/><path d='M12 22V2'/><path d='M12 12H2'/><path d='M12 12a5 5 0 0 1 5-5'/><path d='M12 12a5 5 0 0 0 5 5'/></svg>"
+        },
+        {
+          "name": "GraphQL",
+          "percentage": 68,
+          "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2l9 5v10l-9 5-9-5V7l9-5z'/></svg>"
+        }
+      ]
+    },
+    {
+      "name": "Tools",
+      "skills": [
+        {
+          "name": "Git",
+          "percentage": 85,
+          "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='18' cy='18' r='3'></circle><circle cx='6' cy='6' r='3'></circle><path d='M13 6h3a2 2 0 0 1 2 2v7'></path><line x1='6' y1='9' x2='6' y2='21'></line></svg>"
+        },
+        {
+          "name": "Docker",
+          "percentage": 70,
+          "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M17 5h-2V3h2zm-4 0H11V3h2zm-4 0H7V3h2zM5 5H3V3h2zm10 2h-2V5h2zm-4 0h-2V5h2zm-4 0H5V5h2zM9 9H7V7h2zm10 11H5a2 2 0 0 1-2-2v-4h18v4a2 2 0 0 1-2 2z'/></svg>"
+        },
+        {
+          "name": "VS Code",
+          "percentage": 90,
+          "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='16 18 22 12 16 6'></polyline><polyline points='8 6 2 12 8 18'></polyline><line x1='12' y1='2' x2='12' y2='22'></line></svg>"
+        },
+        {
+          "name": "Figma",
+          "percentage": 65,
+          "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z'></path><path d='M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z'></path><path d='M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z'></path><path d='M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z'></path><path d='M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z'></path></svg>"
+        }
+      ]
+    }
+  ]
+}
