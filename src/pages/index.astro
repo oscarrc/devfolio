@@ -1,12 +1,6 @@
 ---
-import { isStudio } from "../utils/environment";
 import Layout from "../layouts/Layout.astro";
 import Welcome from "../components/Welcome.astro";
-
-// If we're in studio mode, redirect to the studio page
-if (isStudio()) {
-  return Astro.redirect("/studio");
-}
 ---
 
 <Layout>
