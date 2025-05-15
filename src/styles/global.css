@@ -2,3 +2,5 @@
 @plugin "daisyui" {
   themes: dark --default;
 }
+
+@custom-variant hover (&:hover);
