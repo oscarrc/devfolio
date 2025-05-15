@@ -5,9 +5,21 @@ import { defineMiddleware } from 'astro:middleware';
 export const onRequest = defineMiddleware((context, next) => {
   const isStudioPath = context.url.pathname.startsWith('/studio');
   
-  // In studio mode + dev mode: redirect non-studio paths to studio
-  if (isStudio() && !isStudioPath && isDev()) {
-    return Response.redirect(new URL('/studio', context.url), 302);
+  // In studio mode + dev mode:
+  if (isStudio() && isDev()) {
+    // If already on a studio path, allow it
+    if (isStudioPath) {
+      return next();
+    }
+    
+    // If on root path, redirect to studio
+    if (context.url.pathname === '/') {
+      return Response.redirect(new URL('/studio', context.url), 302);
+    }
+    
+    // If not on studio path, redirect to preview path
+    const previewPath = `/preview${context.url.pathname}`;
+    return Response.redirect(new URL(previewPath, context.url), 302);
   }
   
   // In production: block access to studio paths
