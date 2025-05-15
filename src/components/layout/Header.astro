@@ -18,8 +18,8 @@ const promptUser = `${site.name.toLowerCase().replace(/\s+/g, "")}@${domain}`;
 const currentDir = "~/portfolio";
 ---
 
-<header class="sticky top-0 p-4">
-  <nav class="prompt relative flex flex-col font-mono text-sm pl-4">
+<header class="sticky top-0 p-4 w-full">
+  <nav class="prompt relative flex flex-col font-mono text-sm">
     <!-- First line with directory and git info -->
     <div class="flex items-center justify-between gap-1 py-1">
       <div>
@@ -49,20 +49,3 @@ const currentDir = "~/portfolio";
     </div>
   </nav>
 </header>
-
-<style>
-  .prompt:before {
-    content: " ";
-    display: block;
-    border: 1px solid var(--color-base-content);
-    opacity: 0.5;
-    height: 1.65rem;
-    border-right: none;
-    width: 0.75rem;
-    border-top-left-radius: 0.25rem;
-    border-bottom-left-radius: 0.25rem;
-    position: absolute;
-    left: 0;
-    top: 0.75rem;
-  }
-</style>

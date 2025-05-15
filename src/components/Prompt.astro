@@ -48,25 +48,5 @@ const currentDir = "~/portfolio";
   <div class="flex items-center">
     <!-- Prompt character -->
     <span class="text-primary mr-2">❯</span>
-
-    <!-- Cursor simulation -->
-    <span class="w-2 h-4 bg-info inline-block opacity-75 animate-blink"></span>
   </div>
 </nav>
-
-<style>
-  .prompt:before {
-    content: " ";
-    display: block;
-    border: 1px solid var(--color-base-content);
-    opacity: 0.5;
-    height: 1.65rem;
-    border-right: none;
-    width: 0.75rem;
-    border-top-left-radius: 0.25rem;
-    border-bottom-left-radius: 0.25rem;
-    position: absolute;
-    left: 0;
-    top: 0.75rem;
-  }
-</style>

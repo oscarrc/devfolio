@@ -57,7 +57,9 @@ const id = `typewriter-${Math.random().toString(36).substring(2, 9)}`;
         } else {
           // Animation is complete, remove the cursor
           if (cursorElement) {
-            cursorElement.style.display = "none";
+            setTimeout(() => {
+              cursorElement.style.display = "none";
+            }, 1000);
           }
         }
       };
