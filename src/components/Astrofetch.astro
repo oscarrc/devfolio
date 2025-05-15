@@ -1,0 +1,85 @@
+---
+// Astrofetch.astro
+// Neofetch-style component displaying user info and skills
+
+import AsciiProgress from "./AsciiProgress.astro";
+import site from "../config/site.json";
+import skills from "../config/skills.json";
+
+// ASCII Astro logo
+const asciiLogo = [
+  "          .o.          ",
+  "         .888.         ",
+  "        .8'888.        ",
+  "       .8' '888.       ",
+  "      .8'   '888.      ",
+  "     .88888888888.     ",
+  "    .8'       '888.    ",
+  "   .8'         '888.   ",
+  "  .8'           '888.  ",
+  " .8'             '888. ",
+  ".8'               '888.",
+];
+
+// Format the user info for display
+const userInfo = [
+  { label: "name", value: site.name },
+  { label: "title", value: site.title },
+  { label: "description", value: site.description },
+  { label: "location", value: site.location },
+  {
+    label: "available",
+    value: site.available ? site.availableText : "Not available for work",
+  },
+];
+---
+
+<div class="flex flex-col sm:flex-row gap-4">
+  <!-- ASCII logo -->
+  <div class="flex justify-center items-center flex-1">
+    <span>
+      {
+        asciiLogo.map((line) => (
+          <>
+            <pre class="text-primary">{line}</pre>
+          </>
+        ))
+      }
+    </span>
+  </div>
+
+  <!-- User information -->
+  <div class="flex flex-col flex-1">
+    {
+      userInfo.map((item, index) => (
+        <>
+          <code class="text-accent">
+            {item.label}:{" "}
+            <span class="text-secondary font-bold">{item.value}</span>
+          </code>
+        </>
+      ))
+    }
+
+    <div class="text-base-content/50">------------------</div>
+
+    <!-- Skills with ASCII progress bars -->
+    {
+      skills.map((category) => (
+        <>
+          <code data-prefix=">" class="text-accent">
+            {category.name}
+          </code>
+          {category.skills.map((skill) => (
+            <code data-prefix="-" class="pl-8">
+              <span class="text-secondary mr-2 inline-block w-24">
+                {skill.name}
+              </span>
+              <AsciiProgress percentage={skill.percentage} />
+            </code>
+          ))}
+        </>
+      ))
+    }
+  </div>
+</div>

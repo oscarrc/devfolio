@@ -1,0 +1,26 @@
+---
+// AsciiProgress.astro
+// ASCII progress bar component
+
+interface Props {
+  percentage: number;
+  width?: number;
+  activeChar?: string;
+  inactiveChar?: string;
+}
+
+const {
+  percentage,
+  width = 20,
+  activeChar = "█",
+  inactiveChar = "░",
+} = Astro.props;
+
+// Calculate filled positions
+const filled = Math.round((percentage / 100) * width);
+const progress =
+  activeChar.repeat(filled) + inactiveChar.repeat(width - filled);
+---
+
+<span class="font-mono">{progress}</span>
+<span class="font-mono text-base-content/70 ml-2">{percentage}%</span>

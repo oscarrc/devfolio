@@ -1,5 +1,13 @@
 ---
+import Astrofetch from "@/components/Astrofetch.astro";
+import Prompt from "@/components/Prompt.astro";
 import Layout from "@/layouts/Layout.astro";
+import Terminal from "@/layouts/Terminal.astro";
 ---
 
-<Layout />
+<Layout>
+  <Terminal>
+    <Astrofetch />
+    <Prompt />
+  </Terminal>
+</Layout>
