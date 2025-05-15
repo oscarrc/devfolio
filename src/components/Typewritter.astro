@@ -1,0 +1,68 @@
+---
+interface Props {
+  text: string;
+  speed?: number;
+  delay?: number;
+  className?: string;
+  cursor?: boolean;
+}
+
+const {
+  text,
+  speed = 50,
+  delay = 0,
+  className = "",
+  cursor = true,
+} = Astro.props;
+
+// Generate a unique ID for this instance
+const id = `typewriter-${Math.random().toString(36).substring(2, 9)}`;
+---
+
+<span id={id} class={className}>
+  <span class="content"></span>
+  {
+    cursor && (
+      <span class="cursor text-primary leading-4 inline-block animate-blink">
+        █
+      </span>
+    )
+  }
+</span>
+
+<script define:vars={{ id, text, speed, delay, cursor }}>
+  // Wait for the document to be fully loaded
+  document.addEventListener("DOMContentLoaded", () => {
+    const element = document.getElementById(id);
+    if (!element) return;
+
+    const contentElement = element.querySelector(".content");
+    const cursorElement = element.querySelector(".cursor");
+    let currentText = "";
+    let currentIndex = 0;
+
+    // Start after specified delay
+    setTimeout(() => {
+      const typeNextChar = () => {
+        if (currentIndex < text.length) {
+          currentText += text[currentIndex];
+
+          // Update text content
+          if (contentElement) {
+            contentElement.textContent = currentText;
+          }
+
+          currentIndex++;
+          setTimeout(typeNextChar, speed);
+        } else {
+          // Animation is complete, remove the cursor
+          if (cursorElement) {
+            cursorElement.style.display = "none";
+          }
+        }
+      };
+
+      typeNextChar();
+    }, delay);
+  });
+</script>
