@@ -6,9 +6,16 @@ import Prompt from "@/components/Prompt.astro";
 ---
 
 <Layout>
-  <Header />
-  <main>
+  <header class="w-full bg-base-300 z-50 p-4 pl-8">
+    <Header />
+    <Prompt text="devfetch" />
+  </header>
+
+  <main class="wrapper relative flex-1 overflow-y-auto p-4 pl-8">
     <Devfetch />
   </main>
-  <Prompt />
+
+  <footer class="bg-base-300 p-2 px-8">
+    <Prompt />
+  </footer>
 </Layout>

@@ -18,33 +18,30 @@ const promptUser = `${site.name.toLowerCase().replace(/\s+/g, "")}@${domain}`;
 const currentDir = "~/portfolio";
 ---
 
-<header class="sticky top-0 pt-4 w-full bg-base-300 z-50">
-  <nav class="prompt relative flex flex-col font-mono text-sm">
-    <!-- First line with directory and git info -->
-    <div
-      class="flex items-start md:items-center justify-between flex-wrap gap-1 py-1"
-    >
-      <div>
-        <span class="text-primary">$</span>
-        <span class="text-secondary">[{promptUser}]</span>
-        <span class="text-primary">{currentDir}</span>
-      </div>
-      <div class="flex-1 h-px bg-base-content/50 mx-1 self-center"></div>
-      <div class="join">
-        <a
-          class="bg-accent px-2 text-accent-content border-l border-base-300 cursor-pointer hover:bg-transparent hover:text-accent transition-all duration-200 join-item"
-          >Projects</a
-        >
-        <a
-          class="bg-accent px-2 text-accent-content border-l border-base-300 cursor-pointer hover:bg-transparent hover:text-accent transition-all duration-200 join-item"
-          >Blog</a
-        >
-        <a
-          class="bg-accent px-2 text-accent-content border-l border-base-300 cursor-pointer hover:bg-transparent hover:text-accent transition-all duration-200 join-item"
-          >Contact</a
-        >
-      </div>
+<nav class="prompt relative flex flex-col font-mono text-sm">
+  <!-- First line with directory and git info -->
+  <div
+    class="flex items-start md:items-center justify-between flex-wrap gap-1 py-1"
+  >
+    <div>
+      <span class="text-primary">$</span>
+      <span class="text-secondary">[{promptUser}]</span>
+      <span class="text-primary">{currentDir}</span>
     </div>
-    <Prompt text="devfetch" />
-  </nav>
-</header>
+    <div class="flex-1 h-px bg-base-content/50 mx-1 self-center"></div>
+    <div class="join">
+      <a
+        class="bg-accent px-2 text-accent-content border-l border-base-300 cursor-pointer hover:bg-transparent hover:text-accent transition-all duration-200 join-item"
+        >Projects</a
+      >
+      <a
+        class="bg-accent px-2 text-accent-content border-l border-base-300 cursor-pointer hover:bg-transparent hover:text-accent transition-all duration-200 join-item"
+        >Blog</a
+      >
+      <a
+        class="bg-accent px-2 text-accent-content border-l border-base-300 cursor-pointer hover:bg-transparent hover:text-accent transition-all duration-200 join-item"
+        >Contact</a
+      >
+    </div>
+  </div>
+</nav>
