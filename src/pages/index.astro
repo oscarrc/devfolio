@@ -2,14 +2,13 @@
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/layout/Header.astro";
 import Devfetch from "@/components/Devfetch.astro";
-import Typewritter from "@/components/Typewritter.astro";
+import Prompt from "@/components/Prompt.astro";
 ---
 
 <Layout>
   <Header />
-  <Devfetch />
-  <div class="flex items-center pr-4">
-    <span class="text-primary mr-2">❯</span>
-    <Typewritter text="devfetch" speed={50} cursor={true} />
-  </div>
+  <main>
+    <Devfetch />
+  </main>
+  <Prompt text="continue" />
 </Layout>
