@@ -5,6 +5,8 @@
 import AsciiProgress from "./AsciiProgress.astro";
 import site from "../config/site.json";
 import skills from "../config/skills.json";
+import socials from "../config/socials.json";
+import { Icon } from "astro-icon/components";
 
 // ASCII Astro logo
 const asciiLogo = [
@@ -49,37 +51,54 @@ const userInfo = [
   </div>
 
   <!-- User information -->
-  <div class="flex flex-col flex-1">
-    {
-      userInfo.map((item, index) => (
-        <>
-          <code class="text-accent">
-            {item.label}:{" "}
-            <span class="text-secondary font-bold">{item.value}</span>
-          </code>
-        </>
-      ))
-    }
+  <div class="flex flex-col flex-1 gap-4">
+    <div class="flex flex-col">
+      {
+        userInfo.map((item, index) => (
+          <>
+            <code class="text-accent">
+              {item.label}:{" "}
+              <span class="text-secondary font-bold">{item.value}</span>
+            </code>
+          </>
+        ))
+      }
+    </div>
 
     <div class="text-base-content/50">------------------</div>
 
-    <!-- Skills with ASCII progress bars -->
-    {
-      skills.map((category) => (
-        <>
-          <code data-prefix=">" class="text-accent">
-            {category.name}
-          </code>
-          {category.skills.map((skill) => (
-            <code data-prefix="-" class="pl-8">
-              <span class="text-secondary mr-2 inline-block w-24">
-                {skill.name}
-              </span>
-              <AsciiProgress percentage={skill.percentage} />
+    <div class="flex flex-col">
+      {
+        skills.map((category) => (
+          <>
+            <code data-prefix=">" class="text-accent">
+              {category.name}
             </code>
-          ))}
-        </>
-      ))
-    }
+            {category.skills.map((skill) => (
+              <code data-prefix="-" class="pl-8">
+                <span class="text-secondary mr-2 inline-block w-24">
+                  {skill.name}
+                </span>
+                <AsciiProgress percentage={skill.percentage} />
+              </code>
+            ))}
+          </>
+        ))
+      }
+    </div>
+    <div class="text-base-content/50 py-2">------------------</div>
+    <div class="flex flex-row gap-4">
+      {
+        socials.map((social) => (
+          <a
+            href={social.url}
+            target="_blank"
+            class="btn btn-square rounded-none btn-accent"
+          >
+            <Icon name={social.icon} class="h-6 w-6" />
+          </a>
+        ))
+      }
+    </div>
   </div>
 </section>
